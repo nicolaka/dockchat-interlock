@@ -1,0 +1,14 @@
+# Database
+db:
+  image: mongo
+  expose:
+    - 27017
+  command: --smallfiles
+web:
+  build: .
+  env_file: app_env
+  ports:
+    - "5000" 
+  links:
+   - db:db
+
