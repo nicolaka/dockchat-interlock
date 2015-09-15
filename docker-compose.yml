@@ -1,14 +1,24 @@
-# Database
+# Interloack/HAProxy
+interlock:
+  image: ehazlett/interlock
+  ports:
+    - "80:8080"
+  volumes:
+    - /var/lib/docker:/etc/docker
+  command: "--swarm-url tcp://<SWARM_IP>:3375 --debug --plugin haproxy start"
+# DB
 db:
   image: mongo
   expose:
     - 27017
   command: --smallfiles
+
+# Web
 web:
   build: .
   env_file: app_env
   ports:
-    - "5000" 
+    - "5000"
   links:
    - db:db
 
