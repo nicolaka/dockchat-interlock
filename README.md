@@ -1,14 +1,24 @@
-Dockchat is a simple Python+Mongo app built to demonstrate persistent data using a Data Volume Container ( dbdata in the docker-compose.yml file). 
+dockchat is a simple Python+Mongo app built to demonstrate various Docker features.
+
+dockchat-interlock showcases dockchat with interloack+haproxy running on swarm.
 
 You need Docker Compose to run this app( pip install -U docker-compose)
 
-To run this app, simply run:
+To run this app, simply add the following info:
 
-dockchat# docker-compose build 
+- In app_env, ensure you add the DNS name of where Interloack will run as both the hostname and domain.
+- In docker-compose.yml, manually plug in the Swarm Master IP or DNS name.
 
-dockchat# docker-compose up -d
+Then run the following to run the app:
 
-By default, this app will run on TCP port 5000
+dockchat-interlock# docker-compose up -d
+
+To see the app, go to the hostname of the instances that is running Interloack
+http://ec2-xx-xx-xx-.amazoneaws.com
+
+To see HAProxy stats, go to 
+http://ec2-xx-xx-xx-.amazoneaws.com/haproxy?stats and user stats/interlock to login.
+
 
 
 
