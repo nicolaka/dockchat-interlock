@@ -12,11 +12,9 @@ db:
   expose:
     - 27017
   command: --smallfiles
-
 # Web
 web:
   build: .
-#  hostname: docker-training.com
   environment:
      - INTERLOCK_DATA={"hostname":"docker-training.com","domain":"docker-training.com"}
   ports:
