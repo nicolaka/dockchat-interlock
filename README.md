@@ -6,7 +6,6 @@ You need Docker Compose to run this app( pip install -U docker-compose)
 
 To run this app, simply add the following info:
 
-- In app_env, ensure you add the DNS name of where Interloack will run as both the hostname and domain.
 - In docker-compose.yml, manually plug in the Swarm Master IP or DNS name.
 
 Then run the following to run the app:

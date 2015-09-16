@@ -5,7 +5,7 @@ interlock:
     - "80:8080"
   volumes:
     - /var/lib/docker:/etc/docker
-  command: "--swarm-url tcp://<SWARM_IP>:3375 --debug --plugin haproxy start"
+  command: "--swarm-url tcp://<SWARM_IP>:<SWARM_PORT> --debug --plugin haproxy start"
 # DB
 db:
   image: mongo
@@ -16,7 +16,9 @@ db:
 # Web
 web:
   build: .
-  env_file: app_env
+#  hostname: docker-training.com
+  environment:
+     - INTERLOCK_DATA={"hostname":"docker-training.com","domain":"docker-training.com"}
   ports:
     - "5000"
   links:
