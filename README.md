@@ -4,7 +4,7 @@ To run this app,manually plug in the Swarm Master IP or DNS name in the docker-c
 
 Then run the following to run the app:
 
-('dockchat-interlock# docker-compose up -d')
+'''dockchat-interlock# docker-compose up -d'''
 
 To see the app, go to the hostname of the instances that is running Interloack
 http://ec2-xx-xx-xx-.amazoneaws.com
