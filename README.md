@@ -1,9 +1,9 @@
 ##Dockchat 
-Dockchat is a simple Python+Mongo app built to demonstrate various Docker features. Dockchat-interlock showcases dockchat with Interlock+ HAproxy/NGINX running on swarm.  If you don't have docker-compose, install it with
+Dockchat is a simple Python+Mongo app built to demonstrate various Docker features. Dockchat-interlock showcases dockchat with Interlock+ HAproxy/NGINX running on Swarm or standalone Engine.  If you don't have docker-compose, install it with
 `pip install -U docker-compose`
 
-To run this app, manually add the Engine or Swarm Master IP or DNS name in the docker-compose.yml. If you're using Engine, make sure to also add 
-Engine's IP/DNS to the PROXY_BACKEND_OVERRIDE_ADDRESS env variables.
+To run this app, manually add the Engine or Swarm Master IP/DNS in the docker-compose.yml. If you're running this against a standalone Engine, make sure to also add 
+the Engine's IP/DNS to the PROXY_BACKEND_OVERRIDE_ADDRESS env variable in the docker-compose.yml file.
 
 Then run the following to run the app:
 
