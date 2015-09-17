@@ -1,11 +1,14 @@
-# Interloack/HAProxy
+# Interlock/HAProxy
 interlock:
-  image: ehazlett/interlock
+  image: ehazlett/interlock:latest
   ports:
-    - "80:8080"
+    - "80:80"
   volumes:
     - /var/lib/docker:/etc/docker
-  command: "--swarm-url tcp://<SWARM_IP>:<SWARM_PORT> --debug --plugin haproxy start"
+  environment:
+    - HAPROXY_PROXY_BACKEND_OVERRIDE_ADDRESS=<IP/DNS of Engine>
+    - NGINX_PROXY_BACKEND_OVERRIDE_ADDRESS=<IP/DNS of Engine>
+  command: "--swarm-url tcp://<IP_OR_DNS_OF_SWARM_MASTER_OR_ENGINE>:<PORT> --debug --plugin <PLUGIN_NAME=nginx or haproxy> start"
 # DB
 db:
   image: mongo
