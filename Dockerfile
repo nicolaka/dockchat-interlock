@@ -1,5 +1,5 @@
 FROM ubuntu:latest
-MAINTAINER "Nicola Kabar"
+MAINTAINER "Nicola Kabar : nicola@docker.com"
 RUN apt-get update -y
 RUN apt-get install -y python-pip python-dev build-essential
 COPY . /app
