@@ -9,10 +9,9 @@ Then run the following to run the app:
 
 `docker-compose up -d`
 
-To see the app, ensure that your laptop can resolve `docker-training.com` to the IP of the node running the Interloack container. To do so, add an entry in your /etc/hosts pointing to that IP. 
+To see the app, ensure that your laptop can resolve `demo.interlock.com` to the IP of the node running the Interloack container. To do so, add an entry in your /etc/hosts pointing to that IP. 
 
-To see HAProxy stats, go to https://<IP_OR_DNS_OF_INTERLOCK>/haproxy?stats 
-e.g: http://ec2-xx-xx-xx-.amazoneaws.com/haproxy?stats and use stats/interlock to login.
+To see HAProxy stats, go to demo.interlock.com/haproxy?stats and use stats/interlock to login.
 
 
 
