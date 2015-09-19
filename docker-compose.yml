@@ -18,7 +18,7 @@ db:
 web:
   build: .
   environment:
-     - INTERLOCK_DATA={"hostname":"docker-training.com","domain":"docker-training.com"}
+     - INTERLOCK_DATA={"hostname":"demo","domain":"interlock.com"}
   ports:
     - "5000"
   links:
