@@ -6,8 +6,7 @@ interlock:
   volumes:
     - /var/lib/docker:/etc/docker
   environment:
-    - HAPROXY_PROXY_BACKEND_OVERRIDE_ADDRESS=<IP/DNS of Engine>
-    - NGINX_PROXY_BACKEND_OVERRIDE_ADDRESS=<IP/DNS of Engine>
+    - <PLUGIN_NAME>_PROXY_BACKEND_OVERRIDE_ADDRESS=<IP/DNS of Engine>
   command: "--swarm-url tcp://<IP_OR_DNS_OF_SWARM_MASTER_OR_ENGINE>:<PORT> --debug --plugin <PLUGIN_NAME=nginx or haproxy> start"
 # DB
 db:
