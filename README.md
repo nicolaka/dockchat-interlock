@@ -3,7 +3,7 @@ Dockchat is a simple Python+Mongo app built to demonstrate various Docker featur
 `pip install -U docker-compose`
 
 To run this app, manually add the Engine or Swarm Master IP/DNS in the docker-compose.yml. If you're running this against a standalone Engine, make sure to also add 
-the Engine's IP/DNS to the PROXY_BACKEND_OVERRIDE_ADDRESS env variable in the docker-compose.yml file.
+the Engine's IP/DNS to the <YOUR_PREFERRED_PLUGIN>_PROXY_BACKEND_OVERRIDE_ADDRESS env variable in the docker-compose.yml file. If you're running this on Swarm, make sure to delete <YOUR_PREFERRED_PLUGIN>_PROXY_BACKEND_OVERRIDE_ADDRESS env variable from the compsoe file.
 
 Then run the following to run the app:
 
