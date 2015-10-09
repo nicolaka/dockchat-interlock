@@ -2,21 +2,39 @@
     <head>
         <title>Dock Chat</title>
         <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+        <style>
+        h1 {color:yellow;}
+        </style>
     </head>
     <body>
-        <div id="container">
-            <div class="title">
-                <h1>Dock Chat</h1>
-            </div>
-            <div id="content">
-                <form method="post" action="{{ url_for('chat') }}">
-		  <label> Web Container:  <strong>{{hostname}}</strong> </label>
-                  <label> Last Message:  <strong>{{message}}</strong> </label>
-                  <label for="message">Please enter a message:</label>
-                  <input type="text" name="message" /><br />
+        <div id="container" class="title">
+            <h1> DockChat served from Container ID:  <strong>{{hostname}}</strong></h1>
+        </div>
+        <div id="content" >   
+                <script>
+                    function myFunction(users,messages) {
+                      var users_list=users;
+                      var messages_list = messages;
+                      var text = "";
+                      var i;
+                      for (i = 0; i < messages_list.length ; i++) {
+                          text += "<label> "+ users_list[i]+ " says: " + messages_list[i]+"</label><br>";
+                      }
+                      return text;
+                    }
+                    document.getElementById("content").innerHTML = myFunction({{ users|tojson }},{{ messages|tojson }});
+                </script>
+        <div id="submit">
+                  <form method="post" action="{{ url_for('chat') }}">
+                  <br>
+                  <label for="user">Please enter your name :
+                  <input type="text" name="user" /></label>
+                  <label for="message">Please enter a message :
+                  <input type="text" name="message" /></label>
                   <input type="submit" />
-                </form>
-            </div>
+                  </form>
+        </div>
+        </div>          
     </body>
 </html>
  
